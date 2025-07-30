@@ -24,4 +24,10 @@ class AURA_API IEnemyInterface
 public:
 	virtual void HighlightActor() = 0; // = 0 significa que es una funcion virtual pura, no se provee una definicion, la clase se considera abstracta.
 	virtual void UnHighlightActor() = 0;
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void SetCombatTarget(AActor* InCombatTarget);
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	AActor* GetCombatTarget() const;
 };
